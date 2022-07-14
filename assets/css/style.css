@@ -1,0 +1,465 @@
+/* Formanteando el HTML*/
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+    /* para que sume los espacio del margin hacia adentro "modelo de cajas alternativo"*/
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    /* Para que todo se pegue a los bordes */
+    font-family: 'Libre Baskerville', serif;
+    background-color: #000000;
+    color: #a9a9a9;
+}
+
+.estilo1 {
+    position: relative;
+    top: 5px;
+}
+
+.estilo2 {
+    position: relative;
+    top: -1px;
+}
+
+.hero__navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    /* para invocar FlexBox*/
+    align-items: center;
+    /* esto lo centra con respecto de arriba y abajo */
+    justify-content: flex-end;
+    /* para que se vaya al lado derecho */
+    position: sticky;
+    top: 0;
+}
+
+.hero__navbar nav {
+    /* llamando a la clase del navbar y luego al elemento nav */
+    padding: 0 20px;
+    /* "0" no hagas nada con respecto arriba y abajo - "20px" agrega 20px a cada lado izquierda/derecha */
+    display: flex;
+    gap: 1.5rem;
+    /* genera espacio entre los elemntos */
+}
+
+.hero__navbar nav a {
+    /*llamando a la clase navbar - elemento nav - elemento a (enlaces) */
+    font-size: .75rem;
+    padding: 5px;
+    color: #a9a9a9;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+
+}
+
+.hero__navbar nav a:hover {
+    color: #f9004d;
+    border: 1px solid #f9004d;
+    border-spacing: auto;
+    border-radius: 8px;
+    transform: scale(1.1);
+}
+
+.hero__container {
+    /*padding: .25rem 0; /* para separar el conteiner del navbar*/
+    min-height: calc(100vh - 80px);
+    /* para delimitar el tamaño del container */
+    display: flex;
+    /* alinea en horizontal el h1, h2 e icons con img (el container)*/
+    flex-direction: column;
+    /* alinea la img sobre el texto */
+    align-items: center;
+    /* alinea el container en el centro izquierdo de la pag */
+    justify-content: center;
+    /* centra en el medio de la pag el container */
+}
+
+.nav__toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0;
+    line-height: 60px;
+    display: none; /*se oculta el boton de hamburgesa cuando no se necesita */
+}
+
+
+.hero__img-container {
+    width: 250px;
+    height: 250px;
+}
+
+.hero__img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 39%;
+}
+
+.hero__info {
+    text-align: center;
+    width: 450px;
+}
+
+.hero__subtitle {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: clamp(16px, 5vw, 45px);
+    /* para escalar el tamaño de la letra a medida que aumenta el tamaño de la pantalla */
+}
+
+.hero__social {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.hero__social i {
+    font-size: 38px;
+    color: #a9a9a9;
+    transition: all .3 ease-in-out;
+}
+
+.hero__linkedin,
+.hero__twitter {
+    width: inherit;
+    /* para que el cuadro sea del tamaño del icono*/
+    border-radius: 10%;
+    border: 1px groove #a9a9a9
+}
+
+.hero__linkedin:hover,
+.hero__twitter:hover {
+    border-color: #000000;
+    transition: all .3s ease-in-out;
+}
+
+.hero__social i:hover {
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    /* para que se centre en "Acerca de mi*/
+}
+
+.about {
+    /* esto abarca todo el contenedor de "Acerca de Mí"*/
+    padding: 5rem 0;
+    /* para generar espacio alrededor del texto */
+    text-align: center;
+}
+
+.about__tittle {
+    color: white;
+    font-size: 2rem;
+}
+
+.skill {
+    /* esto eabarca todo el contenedor de "Acerca de Mí"*/
+    padding: 5rem 20px
+        /* para generar espacio alrededor del texto */
+}
+
+.skills__title {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.skills__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* aqui se generan un cuadro de 2 item x 2 item */
+    grid-template-rows: 180px 180px;
+    /* separa los iconos*/
+}
+
+.skill-item {
+    /* aqui se coloca el icono arriba del texto*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.prue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-item i {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #1c1616;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item i:hover, /* esto afecta a los iconos de mis abilidades y a las de contacto */
+.skill-item i:hover {
+    background-color: #121010;
+    color: white;
+    border: #000000;
+}
+
+
+.skill-item span {
+    color: #e8e8e8;
+}
+
+.expe {
+    padding: 5rem 20px;
+}
+
+.expe__title {
+    padding-bottom: 1rem;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.expe__sub-container1,
+.expe__sub-container2,
+.expe__sub-container3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* aqui se generan un cuadro de 2 item x 2 item */
+    grid-template-rows: 30px 30px;
+    /* separa los iconos*/
+}
+
+.expe-item {
+    /* aqui se coloca el icono arriba del texto*/
+    margin-left: 12rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* separa los iconos*/
+    align-items: baseline;
+
+}
+
+.cargo {
+    font-size: 1.25rem;
+    color: white;
+}
+
+.hr-expe {
+    margin-left: 8rem;
+}
+
+.span-exp {
+    margin-top: 1.25rem;
+}
+
+@media (max-width: 768px){
+    .expe__title,
+    .expe__sub-container1,
+    .expe__sub-container2,
+    .expe__sub-container3 {
+        display: flex;
+        padding-bottom: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .expe-item {
+        /* aqui se coloca el icono arriba del texto*/
+        margin-left: 0rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        /* separa los iconos*/
+        align-items: baseline;
+    
+    }
+
+    .hr-expe {
+        margin-left: 0rem;
+    }
+}
+
+.porta {
+    padding: 2rem 2px;
+}
+
+.porta__title {
+    padding-bottom: 1rem;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.porta__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* aqui se generan un cuadro de 2 item x 2 item */
+    grid-template-rows: 100px 100px;
+    /* separa los iconos*/
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+    .porta__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.card {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+    border-radius: 3%;
+}
+
+.crop {
+    position: absolute;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.contact {
+    /* esto eabarca todo el contenedor de "Acerca de Mí"*/
+    padding: 5rem 20px
+        /* para generar espacio alrededor del texto */
+}
+
+.contact__title {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.contac__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* aqui se generan un cuadro de 2 item x 2 item */
+    grid-template-rows: 180px 180px;
+    /* separa los iconos*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item {
+    /* aqui se coloca el icono arriba del texto*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    /* separa los iconos*/
+    padding: 2rem;
+}
+
+.contact-item i {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.lines {
+    width: 100%;
+    height: 100%;
+    min-height: 100 vh;
+    background:url(./assets/img/WaveLine.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border: 2px solid red;
+}
+
+@media (max-width: 768px) {
+    .hero__navbar {
+        display: flex;
+        position: sticky;
+        top: 0;
+    }
+
+    .barra_nav {
+        display: none;
+    }
+
+    .hero__navbar nav {
+        flex-direction: column;
+        /*background-color: #1f1f1f;*/
+        margin-right: 20px;
+        background-color: yellow;
+        position: fixed;
+        top: 20px;
+        padding: 10px;
+
+        overflow: auto;
+    }
+
+    .hero__navbar nav a:hover {
+        color: #f9004d;
+        transform: scale(1.1);
+        display: flex;
+
+
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+
+
+}
+
+
+.up {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 40px;
+    right: 50px;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+
+    font-size: 22px;
+}
