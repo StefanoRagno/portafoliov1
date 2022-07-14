@@ -5,12 +5,13 @@ html {
     /* para que sume los espacio del margin hacia adentro "modelo de cajas alternativo"*/
     scroll-behavior: smooth;
 }
-
+/*
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
+*/
 
 body {
     margin: 0;
@@ -30,6 +31,7 @@ body {
     top: -1px;
 }
 
+/* navbar__menu */
 .hero__navbar {
     width: 100%;
     height: 80px;
@@ -39,9 +41,8 @@ body {
     /* esto lo centra con respecto de arriba y abajo */
     justify-content: flex-end;
     /* para que se vaya al lado derecho */
-    position: sticky;
-    top: 0;
 }
+
 
 .hero__navbar nav {
     /* llamando a la clase del navbar y luego al elemento nav */
@@ -70,6 +71,113 @@ body {
     transform: scale(1.1);
 }
 
+:root {
+    --navbar-header: 60px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    background-color: #f5f5f500;
+    width: 100%;
+    height: var(--navbar-header);
+    border-bottom: 1px solid rgb(0, 0, 0); 
+    z-index: 2;  
+}
+/*
+.navbar__interior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+}
+*/
+.navbar__btn-action,
+.navbar__cerrar {
+    visibility: hidden;
+
+}
+
+@media (max-width: 768px) {
+
+    .navbar__btn-action,
+    .navbar__cerrar {
+    visibility: visible;
+
+}
+
+    .hero__navbar nav a {
+        color: white;
+        text-shadow: 2px 2px 12px red;
+    }
+
+    .hero__navbar nav a:hover {
+        color: #f9004d;
+        border: 1px solid #f9004d;
+        border-spacing: auto;
+        border-radius: 8px;
+        transform: scale(1.1);
+        text-shadow: 2px 2px 12px white;
+        font-weight: bold;
+    }
+
+    /* navbar__menu */
+    .hero__navbar {
+        position: fixed;
+        left: 0;
+        top: -100%;
+        width: 100%;
+        background-color: #77777769;
+        align-items: flex-start;
+        justify-content: center;
+        border-radius: 0 0 12px 12px;
+        padding: 30px 0 200px;
+        box-shadow: 1px 1px 16px -4px;
+        transition: .3 ease-in-out;
+    }
+
+    .hero__navbar.mostrar__menu {
+        top: 0;
+    }
+
+
+
+    /* navbar__lista */
+    .barra_nav {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .navbar__cerrar {
+        position: absolute;
+        left: 0;
+        padding-left: 20px;
+        top: 20px ;
+        right: 20px;
+        background-color: transparent;
+        color: transparent;
+        border: none;
+        font-size: 24px;
+    }
+
+    .navbar__btn-action {
+        padding-top: 20px;
+        padding-left: 20px;
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } 
+}
+
+.hero {
+    margin-top: calc(20px + var(--navbar-header));
+}
+
 .hero__container {
     /*padding: .25rem 0; /* para separar el conteiner del navbar*/
     min-height: calc(100vh - 80px);
@@ -84,16 +192,9 @@ body {
     /* centra en el medio de la pag el container */
 }
 
-.nav__toggle {
-    color: white;
-    background: none;
-    border: none;
-    font-size: 30px;
-    padding: 0;
-    line-height: 60px;
-    display: none; /*se oculta el boton de hamburgesa cuando no se necesita */
+.hero_title {
+    color: #f9004d;
 }
-
 
 .hero__img-container {
     width: 250px;
@@ -194,12 +295,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-}
-
-.prue {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .skill-item i {
@@ -328,6 +423,23 @@ body {
         align-items: center;
         justify-content: center;
         text-align: center;
+        width: 40%;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .crop {
+        position: absolute;
+        left: 100%;
+        right: 100%;
+        top: 100%;
+        bottom: 100%;
+        margin: auto;
+        min-height: 100%;
+        min-width: 100%;
     }
 }
 
@@ -400,17 +512,8 @@ footer {
     justify-content: center;
 }
 
-.lines {
-    width: 100%;
-    height: 100%;
-    min-height: 100 vh;
-    background:url(./assets/img/WaveLine.png);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    border: 2px solid red;
-}
 
+/*
 @media (max-width: 768px) {
     .hero__navbar {
         display: flex;
@@ -424,9 +527,8 @@ footer {
 
     .hero__navbar nav {
         flex-direction: column;
-        /*background-color: #1f1f1f;*/
+        /*background-color: #1f1f1f;
         margin-right: 20px;
-        background-color: yellow;
         position: fixed;
         top: 20px;
         padding: 10px;
@@ -441,14 +543,7 @@ footer {
 
 
     }
-
-    .nav__toggle {
-        display: block;
-    }
-
-
-}
-
+}*/
 
 .up {
     position: fixed;

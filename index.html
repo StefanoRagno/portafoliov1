@@ -20,24 +20,47 @@
 </head>
 
 <body>
-    <header class="hero">
-        <div class="hero__navbar">
-            <nav>
-                <!-- Con Nav se van a crear una lista de enlaces-->
-                <button class="nav__toggle">
-                    <i class='bx bx-menu'></i> <!-- Para crear un icono hamburguesa en dispositivos mas pequeños -->
-                </button>
-                <div class="barra_nav">
-                    <a href="#">Home</a>
-                    <a href="#about">Acerca de mí</a>
-                    <a href="#skills">Mis Habilidades</a>
-                    <a href="#expe">Experiencias</a>
-                    <a href="#porta">Proyectos</a>
-                    <a href="#contact">Contactos</a>
+    <header class="cabesera">
+        <div class="navbar">
+            <div class="navbar__interior">
+                <div id="navbar__menu" class="hero__navbar">
+                    <button id="navbar__cerrar" class="navbar__cerrar">
+                        <i class="bx bx-x" ></i>
+                    </button>
+                   <nav class="barra_nav"><!-- Con Nav se van a crear una lista de enlaces-->
+                        <a href="#">Home</a>
+                        <a href="#about">Acerca de mí</a>
+                        <a href="#skills">Mis Habilidades</a>
+                        <a href="#expe">Experiencias</a>
+                        <a href="#porta">Proyectos</a>
+                        <a href="#contact">Contactos</a>
+                   </nav>
                 </div>
-
-            </nav>
+                <div class="navbar__btn">
+                    <button id="navbar__btn" class="navbar__btn-action">
+                        <i class='bx bx-menu' style='color:#ffffff'  ></i>
+                    </button>
+                </div>
+            </div>
         </div>
+    </header>
+
+    <script>
+        const menu = document.getElementById('navbar__menu')
+        const abrir = document.getElementById('navbar__btn')
+        const cerrar = document.getElementById('navbar__cerrar')
+
+        abrir.addEventListener('click', (e) => {
+            menu.classList.add('mostrar__menu')
+        })
+
+        cerrar.addEventListener('click', (e) => {
+            menu.classList.remove('mostrar__menu')
+        })
+
+    </script>
+
+    <div class="hero">
         <div class="estilo1">
             <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 170">
                 <defs>
@@ -140,7 +163,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 
     <main class="wrapper">
         <section class="about">
